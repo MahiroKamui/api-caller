@@ -1,0 +1,14 @@
+import {Router} from "express"
+
+
+const router = Router()
+
+router.get('/health', (req, res) => {
+    res.json({status: 'OK', uptime: process.uptime(), usage: process.cpuUsage()})
+})
+
+router.get('/', (req, res) => {
+    res.send('Hello API')
+})
+
+export default router
